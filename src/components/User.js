@@ -3,8 +3,14 @@ import { connect } from "react-redux";
 import { setUsername } from "../actions";
 
 export function User({ username, updateStateHandleOnChange }) {
-  const handleInputUserName = e => {
-    updateStateHandleOnChange(e.target.value);
+  // const handleInputUserName = e => {
+  //   updateStateHandleOnChange(e.target.value);
+  // };
+
+  const keyPressed = event => {
+    return event.key === "Enter"
+      ? updateStateHandleOnChange(event.target.value)
+      : null;
   };
   return (
     <div>
@@ -13,7 +19,8 @@ export function User({ username, updateStateHandleOnChange }) {
         type="text"
         name="username"
         placeholder="username"
-        onChange={e => handleInputUserName(e)}
+        // onChange={e => handleInputUserName(e)}
+        onKeyPress={e => keyPressed(e)}
       />
       <h1>Username: {username}</h1>
     </div>
