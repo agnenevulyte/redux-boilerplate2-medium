@@ -7,9 +7,11 @@ import "./index.css";
 import App from "./App";
 
 // initialStore  neccessary for the first time page loads
-// the keys (child) should be the same as in combineReducers
+// the keys (child, user) should be the same as in combineReducers
 let initialStore = {
-  child: { itemId: 9999 }
+  child: { itemId: 9999 },
+  // foo: 123,
+  user: { username: "no name" }
 };
 
 const store = createStore(combineReducers, initialStore);
