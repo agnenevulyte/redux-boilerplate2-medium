@@ -9,3 +9,8 @@ export const setActionTemplate = itemId => ({
   type: setActionTypes.SET_ACTION_TYPE,
   itemId
 });
+
+export const setUsername = str => ({
+  type: setActionTypes.SET_USERNAME,
+  username: str
+});
