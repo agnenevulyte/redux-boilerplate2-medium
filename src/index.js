@@ -14,7 +14,15 @@ let initialStore = {
   user: { username: "no name" }
 };
 
-const store = createStore(combineReducers, initialStore);
+const store = createStore(
+  combineReducers,
+  initialStore,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+// const store = createStore(combineReducers, initialStore);
+// const finalCreateStore = compose(
+//   window.devToolsExtension ? window.devToolsExtension() : f => f
+// )(createStore)
 
 ReactDOM.render(
   <Provider store={store}>
